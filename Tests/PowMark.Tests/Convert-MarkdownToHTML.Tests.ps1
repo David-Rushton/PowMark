@@ -1,7 +1,7 @@
 $ModuleManifestName = 'PowMark.psd1'
 $ModuleManifestPath = "$PSScriptRoot\..\..\Source\PowMark\$ModuleManifestName"
 
-Describe 'ConvertFrom-Markdown Tests' {
+Describe 'Convert-MarkdownToHTML Tests' {
 
     Import-Module $ModuleManifestPath
 
