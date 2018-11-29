@@ -38,7 +38,6 @@ function Convert-MarkdownToHTML {
                 Write-Verbose "Converting file to HTML: $object."
                 [string]$markdown = Get-Content -Path $object -Raw
             }
-
             else {
 
                 Write-Verbose "Converting string to markdown: $object."
