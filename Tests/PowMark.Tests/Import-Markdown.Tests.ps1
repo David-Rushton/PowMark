@@ -6,7 +6,20 @@ Describe 'Import-Markdown Tests' {
     Import-Module $ModuleManifestPath -Force
 
 
-    It 'Should import a file.' {
+
+    It 'Should impact a test file' {
+
+        $path = "TestDrive:\MDTest.md"
+        Set-Content -Path $path -Value "**bold text**"
+
+        $expected = "<p><strong>bold text</strong></p>`n"
+        $actual = (Import-Markdown -Path $path).HTML
+
+        $actual | Should -Be $expected
+    }
+
+
+    It 'Should import a mock file.' {
 
         Mock Test-Path { $true } -ModuleName PowMark -Verifiable
         Mock Get-Content { "**bold text**" } -ModuleName PowMark -Verifiable
@@ -22,7 +35,7 @@ Describe 'Import-Markdown Tests' {
     }
 
 
-    It 'Should import multiple files.' {
+    It 'Should import multiple mock files.' {
 
         Mock Test-Path { $true } -ModuleName PowMark -Verifiable
         Mock Get-Content { "**bold text**" } -ModuleName PowMark -Verifiable
@@ -36,4 +49,5 @@ Describe 'Import-Markdown Tests' {
 
         Assert-VerifiableMock
     }
+
 }
