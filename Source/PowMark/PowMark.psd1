@@ -55,7 +55,7 @@ Description = 'Provides a PowerShell wrapper around the Markdig library.'
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = @(
-    "$PSScriptRoot\Resources\Markdig.dll"
+    "$PSScriptRoot\Resources\Bin\Markdig.dll"
 )
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
@@ -72,7 +72,9 @@ RequiredAssemblies = @(
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
-    'Convert-MarkdownToHTML'
+    'ConvertFrom-Markdown',
+    'Import-Markdown',
+    'Get-MarkdownTheme'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -121,6 +123,6 @@ PrivateData = @{
 # HelpInfoURI = ''
 
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
-DefaultCommandPrefix = 'pm'
+# DefaultCommandPrefix = 'pm'
 
 }
