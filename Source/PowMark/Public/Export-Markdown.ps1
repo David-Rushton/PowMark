@@ -79,7 +79,7 @@ function Export-Markdown {
 
 
     # Text.
-    If ($typeName -eq 'string') {
+    if ($typeName -eq 'string') {
 
         # File mode.
         if (Test-Path -Path $InputObject -PathType "Leaf") {
@@ -119,7 +119,7 @@ function Export-Markdown {
 
         $params = @{
             Path = $OutputPath
-            Value = markdownObject.HTML
+            Value = $markdownObject.HTML
             Force = $Force
         }
         Set-Content @params
