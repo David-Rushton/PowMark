@@ -24,7 +24,7 @@
 #>
 function Import-Markdown {
     [CmdletBinding()]
-    [OutputType('OldLead.PowMark.Markdown')]
+    [OutputType('OldLeaf.PowMark.Markdown')]
     param(
 
         [parameter(
@@ -52,6 +52,7 @@ function Import-Markdown {
 
                 try {
 
+                    Write-Verbose "Importing: $subItem."
                     $markdown = (Get-Content -Path $subItem)
                     Write-Output (ConvertFrom-Markdown -Markdown $markdown)
                 }

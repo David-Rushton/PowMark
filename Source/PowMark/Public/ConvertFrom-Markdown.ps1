@@ -42,6 +42,7 @@ function ConvertFrom-Markdown {
     process {
         foreach ($item in $Markdown) {
 
+            Write-Verbose "Returning markdown object."
             Write-Output ([PSCustomObject]@{
                 Markdown = $item
                 HTML = [Markdig.Markdown]::ToHtml($item, $pipeline)

@@ -3,6 +3,9 @@
 #
 
 
+Set-StrictMode -Version 'Latest'
+
+
 # Get public, private and class definition files.
 $classes = @( Get-ChildItem -Path $PSScriptRoot\Classes\*.ps1 -ErrorAction SilentlyContinue )
 $public  = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1  -ErrorAction SilentlyContinue )

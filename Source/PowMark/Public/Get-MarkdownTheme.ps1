@@ -25,7 +25,7 @@ function Get-MarkdownTheme {
             Position=0,
             ValueFromPipeline,
             ValueFromPipelineByPropertyName,
-            HelpMessage='Wild card theme filter.'
+            HelpMessage='Wild card supported, theme filter.'
         )]
         [string]$Theme
     )
@@ -34,6 +34,7 @@ function Get-MarkdownTheme {
 
     if (($Theme -eq $null) -or ($Theme -eq "")) {
 
+        Write-Verbose "Returning all themes."
         $theme = "*"
     }
 
