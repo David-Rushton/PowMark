@@ -1,2 +1,5 @@
 # Ignore setting file.
 .vscode/
+
+# Ignore personal build file.
+Scripts/Build.dr.ps1
